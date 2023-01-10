@@ -193,7 +193,6 @@
           }
         }
 
-        }
 
 
 
@@ -201,27 +200,63 @@
   </head>
 
   <body>
+
+    <h1>Skaitļu spele</h1>
+  
+      
+
     <div class="wrapper">
       <div class="main">
         <div class="decoration">
           <div id="about">
             <h1>Spēle</h1>
+
+          <script type = "text/javascript">
+  
+
+            var y = Math.floor(Math.random() * 10 + 1);
+        
+
+            var guess = 1;
+        
+            document.getElementById("submitguess").onclick = function(){
+          
+                var x = document.getElementById("guessField").value;
+        
+                if(x == y)
+                {    
+                  alert("CONGRATULATIONS!!! YOU GUESSED IT RIGHT IN "
+                        + guess + " GUESS ");
+                }
+                else if(x > y) /* if guessed number is greater than actual number*/
+                {    
+                  guess++;
+                  alert("OOPS SORRY!! TRY A SMALLER NUMBER");
+                }
+                else
+                {
+                  guess++;
+                  alert("OOPS SORRY!! TRY A GREATER NUMBER")
+                }
+            }
+          </script>
             <ul id="homeList">
-              <li>weqeweweqwe1</li>
-              <li>1212323123123123123123</li>
+              <li>Mēs esam izvēlējušies nejaušu skaitli no 1 līdz 10.</li>
+              <li>Pārbaudiet, vai varat to uzminēt.</li>
             </ul>
             <div id="innerHome" class="inner">
               <div id="homeBox" class="box">
                 <a href="" class="navHome">
-                  <button class="navBtn">
-                    <div class="navText">Sākt!</div>
-                  </button>
-                </a>
-                <div class="divider"></div>
-                <a href="" class="navHome">
-                  <button class="navBtn">
-                    <div class="navText">Pārbaudi</div>
-                  </button>
+                  <div class="form">
+                    
+                    <input type = "text" 
+                             id = "guessField" 
+                           class = "guessField">
+                    <input type = "submit" 
+                           value = "Submit guess" 
+                           class = "guessSubmit" 
+                           id = "pārbaude">
+                </div>
                 </a>
               </div>
             </div>
